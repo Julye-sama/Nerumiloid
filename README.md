@@ -1,0 +1,2 @@
+# Nerumiloid
+Discord Vocaloid bot
