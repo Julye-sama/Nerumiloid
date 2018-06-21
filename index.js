@@ -22,7 +22,7 @@ bot.on("ready", function() {
   console.log("ready");
   games = ["#help | your favourite vocaloid bot! ≧◡≦","#help | Who ate my eggplants ?!","#help | my ice cream.. NOOO (╥﹏╥)","#help | Ok, SAKE TIME !"];
   randGame = Math.floor(Math.random() * games.length);
-  bot.user.setGame(games[randGame]);
+  bot.user.setPresence(games[randGame]);
 
 });
 
