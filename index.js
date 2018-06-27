@@ -17,12 +17,13 @@ var fortunes = [
 
 var bot = new Discord.Client({autoReconnect: true});
 
-bot.on("ready", function() {
-
+ bot.on("ready", function() {
   console.log("ready");
-  games = ["#help | your favourite vocaloid bot! ≧◡≦","#help | Who ate my eggplants ?!","#help | my ice cream.. NOOO (╥﹏╥)","#help | Ok, SAKE TIME !"];
-  randGame = Math.floor(Math.random() * games.length);
-  bot.user.setPresence(games[randGame]);
+
+   setInterval(function(){ 
+    games = ["#help | your favourite vocaloid bot! ≧◡≦","#help | Who ate my eggplants ?!","#help | my ice cream.. NOOO (╥﹏╥)","#help | Ok, SAKE TIME !", "#help | Flying carrots everywhere", "#help | My face is red because of the red tuna", "#help | Go google it❣ (〃¬3¬)♥", "#help | Len, fast! get my road roller! ", "#help | PANTSU NUGERU MON"];
+    randGame = Math.floor(Math.random() * games.length);
+    bot.user.setActivity(games[randGame]); }, 40000); 
 
 });
 
@@ -30,7 +31,11 @@ bot.on("guildMemberAdd",function(member) {
     member.guild.channels.find("name","general").sendMessage(member.toString() + " welcome! ≧◡≦ take a seat and grab some cookies ~");
 
     member.addRole(member.guild.roles.find("name","loid")).catch(console.error);
-});
+
+
+bot.on('guildMemberRemove',function(member) {
+    member.guild.channels.find("name","general").sendMessage(member.toString() + " Left the server, bye bye :cry:");
+  })});
 
 bot.on("message", function(message) {
   if (message.author.equals(bot.user)) return;
