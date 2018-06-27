@@ -23,7 +23,7 @@ var bot = new Discord.Client({autoReconnect: true});
    setInterval(function(){ 
     games = ["#help | your favourite vocaloid bot! ≧◡≦","#help | Who ate my eggplants ?!","#help | my ice cream.. NOOO (╥﹏╥)","#help | Ok, SAKE TIME !", "#help | Flying carrots everywhere", "#help | My face is red because of the red tuna", "#help | Go google it❣ (〃¬3¬)♥", "#help | Len, fast! get my road roller! ", "#help | PANTSU NUGERU MON"];
     randGame = Math.floor(Math.random() * games.length);
-    bot.user.setGame(games[randGame]); }, 40000); 
+    bot.user.setPresence(games[randGame]); }, 40000); 
 
 });
 
