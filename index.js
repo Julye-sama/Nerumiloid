@@ -28,12 +28,11 @@ var bot = new Discord.Client({autoReconnect: true});
 });
 
 bot.on("guildMemberAdd",function(member) {
-    var image = ["./welcomefile/1.gif", "./welcomefile/2.gif", "./welcomefile/3.gif"];
+    var image = ["./welcomefile/1.gif","./welcomefile/2.gif","./welcomefile/3.gif"];
     var rand = Math.floor(Math.random() * image.length);
     var randomImage = image[rand];
     member.guild.channels.find("name","general").sendMessage(member.toString() + " welcome! ≧◡≦ take a seat and grab some cookies ~", ({files: [image[rand]]}));
     console.log(randomImage)
-
     member.addRole(member.guild.roles.find("name","loid")).catch(console.error);
 
 
