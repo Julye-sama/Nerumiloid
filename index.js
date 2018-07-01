@@ -33,7 +33,7 @@ bot.on("guildMemberAdd",function(member) {
     member.addRole(member.guild.roles.find("name","loid")).catch(console.error);
 
 
-bot.on('guildMemberRemove',function(member) {
+bot.on("guildMemberRemove",function(member) {
     member.guild.channels.find("name","general").sendMessage(member.toString() + " Left the server, bye bye :cry:");
   })});
 
