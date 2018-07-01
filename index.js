@@ -28,7 +28,7 @@ var bot = new Discord.Client({autoReconnect: true});
 });
 
 bot.on("guildMemberAdd",function(member) {
-    member.guild.channels.find("name","general").sendMessage(member.toString() + " welcome! ≧◡≦ take a seat and grab some cookies ~");
+    member.guild.channels.find("name","general").sendMessage(member.toString() + " welcome! ≧◡≦ take a seat and grab some cookies ~" ({files: ["./welcomefile/welcome.gif"]}));
 
     member.addRole(member.guild.roles.find("name","loid")).catch(console.error);
 
