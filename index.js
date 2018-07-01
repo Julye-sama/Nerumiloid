@@ -21,20 +21,20 @@ var bot = new Discord.Client({autoReconnect: true});
   console.log("ready");
 
    setInterval(function(){ 
-    games = ["#help | your favourite vocaloid bot! ≧◡≦","#help | Who ate my eggplants ?!","#help | my ice cream.. NOOO (╥﹏╥)","#help | Ok, SAKE TIME !", "#help | Flying carrots everywhere", "#help | My face is red because of the red tuna", "#help | Go google it❣ (〃¬3¬)♥", "#help | Len, fast! get my road roller! ", "#help | PANTSU NUGERU MON"];
+    games = ["#help | your favourite vocaloid bot! ≧◡≦","#help | Who ate my eggplants ?!","#help | my ice cream.. NOOO (╥﹏╥)","#help | Ok, SAKE TIME !", "#help | Flying carrots everywhere", "#help | My face is red because of the red tuna", "#help | Go google it❣ (〃¬3¬)♥", "#help | Len, fast! get my road roller! ", "#help | PANTSU NUGERU MON"].catch(console.error);
     randGame = Math.floor(Math.random() * games.length);
     bot.user.setPresence(games[randGame]); }, 40000); 
 
 });
 
 bot.on("guildMemberAdd",function(member) {
-    member.guild.channels.find("name","general").sendMessage(member.toString() + " welcome! ≧◡≦ take a seat and grab some cookies ~" ({files: ["./welcomefile/welcome.gif"]}));
+    member.guild.channels.find("name","general").sendMessage(member.toString() + " welcome! ≧◡≦ take a seat and grab some cookies ~", ({files: ["./welcomefile/welcome.gif"]})).catch(console.error);
 
     member.addRole(member.guild.roles.find("name","loid")).catch(console.error);
 
 
 bot.on("guildMemberRemove",function(member) {
-    member.guild.channels.find("name","general").sendMessage(member.toString() + " Left the server, bye bye :cry:");
+    member.guild.channels.find("name","general").sendMessage(member.toString() + " Left the server, bye bye :cry:").catch(console.error);
   })});
 
 bot.on("message", function(message) {
