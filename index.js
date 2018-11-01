@@ -19,12 +19,15 @@ var bot = new Discord.Client({autoReconnect: true});
 
  bot.on("ready", function() {
   console.log("ready");
-
-   setInterval(function(){ 
-    games = ["#help | your favourite vocaloid bot! ≧◡≦","#help | Who ate my eggplants ?!","#help | my ice cream.. NOOO (╥﹏╥)","#help | Ok, SAKE TIME !", "#help | Flying carrots everywhere", "#help | My face is red because of the red tuna", "#help | Go google it❣ (〃¬3¬)♥", "#help | Len, fast! get my road roller! ", "#help | PANTSU NUGERU MON"];
-    randGame = Math.floor(Math.random() * games.length);
-    bot.user.setPresence(games[randGame]); }, 40000); 
-
+   
+    bot.user.setStatus('available')
+    bot.user.setPresence({
+        game: {
+            name: 'with depression',
+            type: "STREAMING",
+            url: "https://www.twitch.tv/monstercat"
+        }
+    });
 });
 
 bot.on("guildMemberAdd",function(member) {
@@ -44,23 +47,9 @@ bot.on("message", function(message) {
   if (message.author.equals(bot.user)) return;
   var msg = message.content.toUpperCase();
 
-    if (msg.includes("SEBOE")) {
-      message.delete();
-      message.channel.send("Não é seboe, é seboso ~")
-     }
-
     if (message.content.startsWith("#pat head")) {
       message.channel.send ({files: ["./random_img/pat_head.png"]});
       }
-
-      if (message.content.startsWith("#kiyoteru")) {
-        var images = ["./kiyoteru/1.jpg","./kiyoteru/2.jpg","./kiyoteru/3.jpg","./kiyoteru/4.gif", "./kiyoteru/5.jpg", "./kiyoteru/6.jpg", "./kiyoteru/6.jpg", "./kiyoteru/7.jpg", "./kiyoteru/8.jpg", "./kiyoteru/9.jpg", "./kiyoteru/10.jpg", "./kiyoteru/11.jpg", "./kiyoteru/12.jpg", "./kiyoteru/13.jpg", "./kiyoteru/14.png", "./kiyoteru/15.jpg", "./kiyoteru/16.jpg", "./kiyoteru/17.jpg", "./kiyoteru/18.jpg", "./kiyoteru/19.jpg", "./kiyoteru/20.jpg", "./kiyoteru/21.jpg", "./kiyoteru/22.jpg","./kiyoteru/23.png", "./kiyoteru/24.png", "./kiyoteru/25.jpg"];
-        var rand = Math.floor(Math.random() * images.length);
-        var randomImage = images[rand];
-        message.channel.send ("Hiyama Kiyoteru (氷山キヨテル)| ©AH-Software Co. Ltd| release date: December 2009" + images[rand]);
-       console.log( randomImage )
-       return;
-       }
 
    if (!message.content.startsWith(PREFIX)) return;
   
@@ -76,14 +65,14 @@ bot.on("message", function(message) {
     case "hello":
             var embed = new Discord.RichEmbed()
                .setDescription("Hai! :3 nerumi-chan at your service ~")
-               .setImage(url = "https://img.buzzfeed.com/buzzfeed-static/static/2013-12/enhanced/webdr05/3/12/anigif_enhanced-buzz-6532-1386090414-9.gif")
+               .setImage(url = "http://i.imgur.com/38rACYP.gif")
                .setColor(0x00FFFF)
                message.channel.sendEmbed(embed);
           break;
 
    case "help":
              var embed = new Discord.RichEmbed()
-             .setDescription("let me lend you a hand ~ Command list:                                                      #hello > hello nerumi !                                                                                                                        #8ball > ask a question                                                                                                      #pat head > pats nerumi's head")
+             .setDescription("**let me lend you a hand ~ Command list:**                                                      #hello > hello nerumi !                                                                                                                        #8ball > ask a question                                                                                                      #pat head > pats nerumi's head")
              .setColor(0x00FFFF)
              message.channel.sendEmbed(embed);
           break;
