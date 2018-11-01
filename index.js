@@ -23,9 +23,8 @@ var bot = new Discord.Client({autoReconnect: true});
     bot.user.setStatus('available')
     bot.user.setPresence({
         game: {
-            name: 'with depression',
-            type: "STREAMING",
-            url: "https://www.twitch.tv/monstercat"
+            name: '#help | your favourite vocaloid bot! ≧◡≦',
+            type: "PLAYING",
         }
     });
 });
