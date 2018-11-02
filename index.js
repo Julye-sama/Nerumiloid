@@ -25,7 +25,7 @@ var bot = new Discord.Client({autoReconnect: true});
         game: {
             name: '#help | your favourite vocaloid bot! ≧◡≦',
             type: "STREAMING",
-            url: "https://www.twitch.tv/monstercat"
+            url: "https://www.twitch.tv/xxjulyexx"
         }
     });
 });
